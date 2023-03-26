@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Login Page</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color:rgb(31, 36, 45);
+               
+            }
+            button{
+                background-color: #00d6e6;
+                width: 25%;
+                padding: 15px;
+                color: black;
+                border: none;
+                float: center;
+                font-size: 15px;
+            }
+            label{
+                font-size: 20px;
+            }
+            form{
+                border: 3px solid #f1f1f1;
+            }
+            input[type=email],input[type=password]{
+                width: 50%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid #00d6e6;
+                box-sizing: border-box;
+            }
+            button:hover{
+                opacity:0.7;
+
+            }
+            .container{
+                padding: 50px;
+                background-color: white;
+            }
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+            }
+              
+            img.avatar {
+                width: 20%;
+                border-radius: 50%;
+            }  
+
+            .heading { color: white;}
+        </style>
+    </head>
+    <body>
+        <center><h1 class="heading">Login Form</h1></center>
+        <form action="#" method="post">
+            {% csrf_token %}
+            {% load static %}
+            <center><div class="container">
+                <div class="imgcontainer">
+                    <img src="{% static 'avatar2.png' %}" alt="Avatar" class="avatar">
+                </div>
+                <label for ='email'><b>UserEmail :  </b></label>
+                <input type="email" placeholder="Enter email" name="email" float="right"  required><br>  
+                <label for='password'><b>Password : </b></label>
+                <input type="password" placeholder="Enter Password" name="password" required><br>  
+                <button type="submit"><b>Login</b></button><br>     
+                Don't have accounct <a href="http://localhost:8000/signup/"> register </a>
+            </div></center>
+        </form>
+    </body>
+</html>
