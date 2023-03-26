@@ -1,6 +1,12 @@
 from django.contrib import admin
 from .models import users
 
-admin.site.register(users)
+
+class UserAdmin(admin.ModelAdmin):
+    list_display = ('First_Name','Last_Name','Gender','Email')
+
 
 # Register your models here.
+admin.site.register(users,UserAdmin)
+
+

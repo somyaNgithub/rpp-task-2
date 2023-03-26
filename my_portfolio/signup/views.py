@@ -30,6 +30,9 @@ def signaction(request):
         c="insert into users Values('{}','{}','{}','{}','{}')".format(fn,ln,gen,em,pswd)
         cursor.execute(c)
         m.commit()
+
+        about = users(First_Name=fn,Last_Name=ln,Gender=gen,Email=em,Password=pswd)
+        about.save()
         
         
 
